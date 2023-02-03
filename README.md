@@ -1,2 +1,2 @@
 # uva-solutions-repo
-java repo for uva problems
+Java solutions repo for uva problems
