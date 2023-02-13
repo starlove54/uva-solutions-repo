@@ -3,18 +3,6 @@ Note: v judge not accepting solutions(weird) and uvalive link not working for th
 
 import java.util.Scanner;
 
-public class JewelEatingMonsters {
-    public static long binaryExpIterative(long a, long b, int M) {
-        long ans = 1;
-        while (b > 0) {
-            if (b % 2 == 1) {
-                ans = (ans * a) % M;
-            }
-            a = (a * a) % M;
-            b >>= 1;
-        }
-        return ans;
-    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
