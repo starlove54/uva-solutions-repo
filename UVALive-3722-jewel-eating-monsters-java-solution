@@ -1,9 +1,10 @@
 java solution for jewel eating monsters 
 Note: v judge not accepting solutions(weird) and uvalive link not working for the problem
 
+
 import java.util.Scanner;
 
-
+public class JewelEatingMonsters {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         long x, alpha, n, c;
