@@ -1,0 +1,77 @@
+java solution
+
+_______________________________________________________________________
+
+import java.util.Scanner;
+
+public class ExtendedEuclidAlgo {
+    public static int[] extendedGCD(int a, int b) {
+        if (b == 0) {
+            int[] res = {1, 0, a};
+            return res;
+        }
+        int[] d = extendedGCD(b, a % b);
+        int x2 = d[0], y2 = d[1];
+        int x = y2;
+        int y = x2 - (a / b) * y2;
+        int gcd = d[2];
+        int[] result = {x, y, gcd};
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNextInt()) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int[] result = extendedGCD(a, b);
+            int gcd = result[2];
+            int x = result[0];
+            int y = result[1];
+            System.out.println(x + " " + y + " " + gcd);
+        }
+    }
+}
+
+_______________________________________________________________________
+
+cpp solution
+
+_______________________________________________________________________
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> extendedGCD(int a, int b) {
+    if (b == 0) {
+        vector<int> res = { 1, 0, a };
+        return res;
+    }
+    vector<int> d = extendedGCD(b, a % b);
+    int x2 = d[0], y2 = d[1];
+    int x = y2;
+    int y = x2 - (a / b) * y2;
+    int gcd = d[2];
+    vector<int> result = { x, y, gcd };
+    return result;
+}
+
+int main() {
+    int a, b;
+    while (cin >> a >> b) {
+        vector<int> result = extendedGCD(a, b);
+        int gcd = result[2];
+        int x = result[0];
+        int y = result[1];
+        cout << x << " " << y << " " << gcd << endl;
+    }
+    return 0;
+}
+
+
+_______________________________________________________________________
+
+
+
